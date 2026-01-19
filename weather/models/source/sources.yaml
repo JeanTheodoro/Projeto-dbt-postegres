@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+  - name: weather_data
+    database: weather
+    schema: weather_data
+    tables:
+      - name: city_weather
+        description: Table Weather 
+        columns:
+          - name: id
+            description: "Unique identifier"
+            tests:
+              - not_null
+              - unique
+
+          - name: city 
+            description: "Nome da cidade"
+            tests:
+              - not_null 
+          
+          - name: temperature
+            description: "Temperatura atual em graus Celsius"
+            tests: 
+              - not_null 
+          
+          - name: weather_description
+            description: "Descrição textual da condição do clima (ex: céu nublado)"
+          
+          - name: wind_speed
+            description: "Velocidade do vento em metros por segundo"
+          
+          - name: time
+            description: "Data e hora da medição do clima"
+            tests:
+              - not_null
+          
+          - name: inserted_at 
+            description: "Data e hora de inserção do registro no banco"
+          
+          - name: timezone
+            description: "Fuso horário da cidade"
+              
